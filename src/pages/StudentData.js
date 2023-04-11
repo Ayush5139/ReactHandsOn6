@@ -18,7 +18,7 @@ function StudentData() {
             <button onClick={()=>{navigate("/NewStu")}} className='stubtn1'>Add New Student</button>
             </div>
             <div> 
-            <table className='stutab' >
+            <table className='stutab'>
                             <thead>
                                 <th className='name'>Name</th>
                                 <th className='name'>Age</th>
@@ -26,7 +26,6 @@ function StudentData() {
                                 <th className='name'>Batch</th>
                                 <th className='name'>Change</th>
                             </thead>
-                            <hr className='stuhr'></hr>
             {
                 dataContext.entries.map((item,index)=>{
                     return(
@@ -36,9 +35,8 @@ function StudentData() {
                             <td className='sub'>{item.Age}</td>
                             <td className='sub'>{item.Course}</td>
                             <td className='sub'>{item.Batch}</td>
-                            <td><Link to='/UpdateStu' state={{Data:index}}>Edit</Link></td>
+                            <td className='sub'><Link to='/UpdateStu' state={{Data:index}}>Edit</Link></td>
                             </tr>
-                            <hr className='stuhr'></hr>
                             </tbody>
                     )
                 })

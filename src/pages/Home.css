@@ -41,17 +41,17 @@ body{
     margin-left: 7.5%;
 }
 
-.stuhr{
-    width: 540%;
-}
-
 .name{
     font-weight: lighter;
     font-size: 25px;
+    border-bottom: 1px black solid  ;
+    border-right: 1px black solid;
 }
 
 .sub{
     font-size: 25px;
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
 }
 
 .adddiv{
