@@ -1,23 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './pages/Home';
+import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import CData from './pages/ContextApi';
+import StudentData from './pages/StudentData';
+import ContactUs from './pages/ContactUs';
+import AddStudent from './pages/AddStudent';
+import UpdateStudent from './pages/UpdateStudent';
 
 function App() {
+  
+  const [Data,setData] = useState([
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>}
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+            <Route path='/' element = {<Home/>}/>
+            <Route path='/Students' element = {
+              <CData.Provider value={{entries : Data, updateData: setData}}>
+                <StudentData/>
+              </CData.Provider>
+            }/>
+            <Route path='/ConatctUs' element = {<ContactUs/>}/>
+            <Route path = '/NewStu' element={
+              <CData.Provider value={{entries : Data, updateData: setData}}>
+                <AddStudent/>
+              </CData.Provider>
+              }/>
+              <Route path = '/UpdateStu' element = {
+                <CData.Provider value={{entries : Data, updateData: setData}}>
+                  <UpdateStudent/>
+                </CData.Provider>
+                }/>
+        </Routes>
     </div>
   );
 }
