@@ -12,12 +12,12 @@ import UpdateStudent from './pages/UpdateStudent';
 function App() {
   
   const [Data,setData] = useState([
-    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
-    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
-    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
-    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
-    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>},
-    {Name: "John",Age: 26, Course:"MERN",Batch:"October",Change:<a>Edit</a>}
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October"},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October"},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October"},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October"},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October"},
+    {Name: "John",Age: 26, Course:"MERN",Batch:"October"}
   ])
   return (
     <div className="App">
